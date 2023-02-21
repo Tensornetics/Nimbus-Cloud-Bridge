@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nimbus-cloud-bridge
+  labels:
+    app: nimbus-cloud-bridge
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nimbus-cloud-bridge
+  template:
+    metadata:
+      labels:
+        app: nimbus-cloud-bridge
+    spec:
+      containers:
+        - name: nimbus-cloud-bridge
+          image: gcr.io/nimbus-cloud-bridge/nimbus-cloud-bridge:latest
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: database-secrets
+                  key: database-url
+            - name: DATABASE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: database-secrets
+                  key: database-username
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: database-secrets
+                  key: database-password
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: aws-secrets
+                  key: access-key-id
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: aws-secrets
+                  key: secret-access-key
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: data
+              mountPath: /data
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: data
