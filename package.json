@@ -1,0 +1,25 @@
+{
+  "name": "nimbus-cloud-bridge",
+  "version": "1.0.0",
+  "description": "Unifying API for Amazon Web Services, Google Cloud Platform, Microsoft Azure, and Oracle Cloud Infrastructure",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo 'No tests yet'"
+  },
+  "author": "Kyle Grant, Tensornetics LLC",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.879.0",
+    "azure-storage": "^2.10.4",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "googleapis": "^107.0.0",
+    "oracledb": "^5.2.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tensornetics/nimbus-cloud-bridge.git"
+  }
+}
