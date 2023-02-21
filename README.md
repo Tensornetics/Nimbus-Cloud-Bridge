@@ -46,6 +46,15 @@ Thank you for your interest in Nimbus-Cloud-Bridge!
 
 ```
 Nimbus-Cloud-Bridge/
+├── docs
+│ ├── architecture.md
+│ ├── design.md
+│ ├── installation.md
+│ ├── usage.md
+│ ├── troubleshooting.md
+│ ├── security_best_practices.md
+│ ├── biometric_authentication.md
+│ └── regulatory_compliance.md
 ├── .github/
 │   ├── workflows/
 │   │   ├── build.yaml
