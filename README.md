@@ -73,20 +73,22 @@ Nimbus-Cloud-Bridge/
 │   ├── aws.js
 │   ├── gcp.js
 │   └── azure.js
-├── src/
-│   ├── api/
-│   │   ├── controllers/
-│   │   ├── middleware/
-│   │   ├── routes/
-│   │   └── app.js
-│   ├── services/
+src/
+├── api/
+│   ├── controllers/
 │   │   ├── aws.js
 │   │   ├── gcp.js
-│   │   └── azure.js
-│   └── utils/
-│       ├── aws.js
-│       ├── gcp.js
-│       └── azure.js
+│   │   ├── azure.js
+│   │   └── index.js
+│   ├── middleware/
+│   │   ├── authenticate.js
+│   │   └── logger.js
+│   ├── routes/
+│   │   ├── aws.js
+│   │   ├── gcp.js
+│   │   ├── azure.js
+│   │   └── index.js
+│   └── app.js
 ├── test/
 │   ├── integration/
 │   └── unit/
